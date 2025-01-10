@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C2A5520A2D2FA19A00B6507F /* Search Enhancer Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C2A552092D2FA19A00B6507F /* Search Enhancer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2A552142D2FA19A00B6507F /* Search Enhancer Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C2A552132D2FA19A00B6507F /* Search Enhancer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C2F026822D30E10E008E5F9D /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C2F026812D30E10E008E5F9D /* dist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		C2A551FD2D2FA19A00B6507F /* Search Enhancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search Enhancer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A552092D2FA19A00B6507F /* Search Enhancer Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Search Enhancer Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A552132D2FA19A00B6507F /* Search Enhancer Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Search Enhancer Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F026812D30E10E008E5F9D /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = "Shared (Extension)/Resources/dist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -217,6 +219,7 @@
 		C2A551CE2D2FA19900B6507F = {
 			isa = PBXGroup;
 			children = (
+				C2F026812D30E10E008E5F9D /* dist */,
 				C2A551D32D2FA19900B6507F /* Shared (App) */,
 				C2A551DC2D2FA19A00B6507F /* Shared (Extension) */,
 				C2A551ED2D2FA19A00B6507F /* iOS (App) */,
@@ -405,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F026822D30E10E008E5F9D /* dist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Search Enhancer.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8N4M7PA2K3;
@@ -629,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Search Enhancer.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8N4M7PA2K3;
@@ -663,6 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Search Enhancer.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8N4M7PA2K3;
@@ -697,6 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Search Enhancer.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8N4M7PA2K3;

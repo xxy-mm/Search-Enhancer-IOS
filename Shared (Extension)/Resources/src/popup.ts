@@ -1,63 +1,78 @@
-const searchInput = document.getElementById("input-search") as HTMLInputElement
-const addInput = document.getElementById("input-add") as HTMLInputElement
-const siteListDiv = document.getElementById("site-list") as HTMLDivElement
-interface SiteListItem {
-  site: string
-  status: "include" | "exclude" | "none"
-}
-const siteList: SiteListItem[] = [
-    { site: "google.com", status: "include" },
-    { site: "bing.com", status: "exclude" },
-    { site: "yahoo.com", status: "none" },
-]
-function newSiteListItem(site: string) {
-  const siteListItem = document.createElement("div")
-  siteListItem.classList.add("site-list-item")
-  siteListItem.innerText = site
-  siteListDiv.appendChild(siteListItem)
-}
+import { MMAppManagerImpl } from "./mmAppManager.js"
+import { mmDOMManagerImpl } from "./mmDOMManager.js"
+import { MMStorageManagerImpl } from "./mmStorageManager.js"
+
+const searchInput = document.querySelector("#input-search") as HTMLInputElement
+const addInput = document.querySelector("#input-add") as HTMLInputElement
+const siteListDiv = document.querySelector("#site-list") as HTMLDivElement
+const switchGroup = document.querySelector("#switch") as HTMLDivElement
+const switchLabels = switchGroup.querySelectorAll(".switch-label")
+
+// Add event listener to switchGroup
+switchGroup.addEventListener("click", (e) => {
+  const target = e.target as HTMLElement
+  switchLabels.forEach((label) => {
+    label.classList.remove("active")
+  })
+  target.classList.toggle("active")
+
+  // TODO: switch Compact / Grouped view
+
+})
+
 
 
 // Add a new site when the user presses Enter
-addInput.addEventListener("keydown", (event) => {
+addInput.addEventListener("keydown", async (event) => {
   if (event.key === "Enter") {
-    const site = addInput.value
-    newSiteListItem(site)
+    const domain = addInput.value
+    await appManager.addSite({ domain, state: "none" })
+    appManager.renderSiteList()
     addInput.value = ""
   }
 })
 
 // Toggle the site state when the user clicks on it
-siteListDiv.addEventListener("click", (event) => {
+siteListDiv.addEventListener("click", async (event) => {
   const target = event.target as HTMLElement
   if (target.classList.contains("site-list-item")) {
-    toggleSiteListItemStatus(target)
+    const domain = target.textContent
+    if (domain == null) return
+    await appManager.toggleSiteState({ domain, state: "none" })
+    await appManager.renderSiteList()
+  } else if(target.classList.contains("delete-icon")){
+    const domain = target.parentElement?.textContent
+    if (domain == null) return
+    await appManager.removeSite({domain, state: 'none'})
+    await appManager.renderSiteList()
   }
 })
 
-function toggleSiteListItemStatus(siteListItem: HTMLElement) {
-  if (isInclude(siteListItem)) {
-    setSiteState(siteListItem, "none")
-  } else if (isExclude(siteListItem)) {
-    setSiteState(siteListItem, "include")
-  } else {
-    setSiteState(siteListItem, "exclude")
+// Filter the site list when the user types in the search input
+searchInput.addEventListener(
+  "input",
+  debounce(async () => {
+    appManager.setSiteFilter(searchInput.value)
+    await appManager.renderSiteList()
+  }, 500)
+)
+
+function debounce(func: Function, wait: number) {
+  let timeout: number
+  return function (...args: any[]) {
+    clearTimeout(timeout)
+    timeout = window.setTimeout(() => {
+      func.apply(args)
+    }, wait)
   }
 }
 
-function isExclude(siteListItem: HTMLElement) {
-  return siteListItem.classList.contains("exclude")
-}
-function isInclude(siteListItem: HTMLElement) {
-  return siteListItem.classList.contains("include")
-}
 
-function setSiteState(
-  siteListItem: HTMLElement,
-  state: "include" | "exclude" | "none"
-) {
-  siteListItem.classList.remove("include", "exclude")
-  if (state !== "none") {
-    siteListItem.classList.add(state)
-  }
-}
+// Render the site list when the popup is opened
+
+const appManager = new MMAppManagerImpl(
+  new MMStorageManagerImpl(),
+  new mmDOMManagerImpl(siteListDiv)
+)
+
+appManager.renderSiteList()

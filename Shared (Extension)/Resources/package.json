@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "@types/chrome": "^0.0.291"
+    "@types/firefox-webext-browser": "^120.0.4"
   },
   "scripts": {
-    "start": "tsc --project ./tsconfig.json --watch"
+    "start": "tsc --project ./tsconfig.json --watch",
+    "build": "tsc --project ./tsconfig.json"
   },
   "keywords": [],
   "author": "",
