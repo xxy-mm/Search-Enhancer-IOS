@@ -110,13 +110,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/_locales,
-				Resources/background.js,
-				Resources/content.js,
 				Resources/images,
 				Resources/manifest.json,
-				Resources/popup.css,
-				Resources/popup.html,
-				Resources/popup.js,
 				SafariWebExtensionHandler.swift,
 			);
 			target = C2A552082D2FA19A00B6507F /* Search Enhancer Extension (iOS) */;
@@ -125,13 +120,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/_locales,
-				Resources/background.js,
-				Resources/content.js,
 				Resources/images,
 				Resources/manifest.json,
-				Resources/popup.css,
-				Resources/popup.html,
-				Resources/popup.js,
 				SafariWebExtensionHandler.swift,
 			);
 			target = C2A552122D2FA19A00B6507F /* Search Enhancer Extension (macOS) */;

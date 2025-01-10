@@ -15,17 +15,17 @@
     },
 
     "background": {
-        "scripts": [ "background.js" ],
+        "scripts": [ "dist/background.js" ],
         "type": "module"
     },
 
     "content_scripts": [{
-        "js": [ "content.js" ],
+        "js": [ "dist/content.js" ],
         "matches": [ "*://example.com/*" ]
     }],
 
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "dist/popup.html",
         "default_icon": "images/toolbar-icon.svg"
     },
 

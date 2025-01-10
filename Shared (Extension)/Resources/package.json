@@ -1,0 +1,15 @@
+{
+  "name": "resources",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/chrome": "^0.0.291"
+  },
+  "scripts": {
+    "start": "tsc --project ./tsconfig.json --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
