@@ -14,19 +14,10 @@
         "512": "images/icon-512.png"
     },
 
-    "background": {
-        "scripts": [ "dist/background.js" ],
-        "type": "module"
-    },
-
-    "content_scripts": [{
-        "js": [ "dist/content.js" ],
-        "css": ["dist/popup.css"],
-        "matches": [ "https://www.google.com","https://www.google.com/search*" ]
-    }],
+   
 
     "action": {
-        "default_popup": "dist/popup.html",
+        "default_popup": "dist/popup/index.html",
         "default_icon": "images/toolbar-icon.svg"
     },
 
