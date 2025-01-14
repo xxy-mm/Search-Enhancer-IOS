@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C2A5520A2D2FA19A00B6507F /* Search Enhancer Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C2A552092D2FA19A00B6507F /* Search Enhancer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2A552142D2FA19A00B6507F /* Search Enhancer Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C2A552132D2FA19A00B6507F /* Search Enhancer Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C2E9A1A32D34240B009308EC /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C2E9A1A22D342409009308EC /* dist */; };
+		C2D7EB0D2D35561700C07FE1 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = C2D7EB0C2D35561700C07FE1 /* dist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,7 @@
 		C2A551FD2D2FA19A00B6507F /* Search Enhancer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search Enhancer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A552092D2FA19A00B6507F /* Search Enhancer Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Search Enhancer Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A552132D2FA19A00B6507F /* Search Enhancer Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Search Enhancer Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2E9A1A22D342409009308EC /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = "Shared (Extension)/Resources/react/dist"; sourceTree = "<group>"; };
+		C2D7EB0C2D35561700C07FE1 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = "../webpack-demo/dist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -219,7 +219,7 @@
 		C2A551CE2D2FA19900B6507F = {
 			isa = PBXGroup;
 			children = (
-				C2E9A1A22D342409009308EC /* dist */,
+				C2D7EB0C2D35561700C07FE1 /* dist */,
 				C2A551D32D2FA19900B6507F /* Shared (App) */,
 				C2A551DC2D2FA19A00B6507F /* Shared (Extension) */,
 				C2A551ED2D2FA19A00B6507F /* iOS (App) */,
@@ -408,7 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2E9A1A32D34240B009308EC /* dist in Resources */,
+				C2D7EB0D2D35561700C07FE1 /* dist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

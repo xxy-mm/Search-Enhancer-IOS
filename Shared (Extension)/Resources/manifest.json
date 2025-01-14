@@ -13,11 +13,26 @@
         "256": "images/icon-256.png",
         "512": "images/icon-512.png"
     },
+    "background": {
+        "scripts": ["dist/background.js"]
+    },
 
-   
+   "content_scripts": [{
+       "matches": [
+           "https://www.google.com/*",
+           "https://www.google.com/search*"
+       ],
+       "js": ["dist/content.js"]
+   }],
+   "web_accessible_resources": [
+       {
+        "resources": ["dist/assets/delete.svg"],
+        "matches": ["https://www.google.com/search*"]
+        }
+   ],
 
     "action": {
-        "default_popup": "dist/popup/index.html",
+        "default_popup": "dist/popup.html",
         "default_icon": "images/toolbar-icon.svg"
     },
 
